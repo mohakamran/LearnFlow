@@ -2,7 +2,7 @@
 
 An AI-powered learning platform that generates personalized, resource-based roadmaps. Tell it what you want to learn — it builds a step-by-step curriculum with curated YouTube videos, articles, and official documentation for each lesson.
 
-![LearnFlow Dashboard](screenshots/dashboard.png)
+<img width="3835" height="1084" alt="dashboard" src="https://github.com/user-attachments/assets/30f96652-fc93-4433-8b31-5fedf1eea4d9" />
 
 ---
 
@@ -32,19 +32,7 @@ An AI-powered learning platform that generates personalized, resource-based road
 | Database | MySQL 8+ |
 | AI | OpenAI GPT-4o via REST API |
 
----
-
-## Screenshots
-
-| Dashboard | My Roadmap | Lesson View |
-|---|---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Roadmap](screenshots/roadmap.png) | ![Lesson](screenshots/lesson.png) |
-
-| Progress | Onboarding | Profile |
-|---|---|---|
-| ![Progress](screenshots/progress.png) | ![Onboarding](screenshots/onboarding.png) | ![Profile](screenshots/profile.png) |
-
----
+ 
 
 ## Prerequisites
 
