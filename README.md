@@ -36,13 +36,9 @@ An AI-powered learning platform that generates personalized, resource-based road
 
 ## Screenshots
 
-| Dashboard | My Roadmap | Lesson View |
-|---|---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Roadmap](screenshots/roadmap.png) | ![Lesson](screenshots/lesson.png) |
-
-| Progress | Onboarding | Profile |
-|---|---|---|
-| ![Progress](screenshots/progress.png) | ![Onboarding](screenshots/onboarding.png) | ![Profile](screenshots/profile.png) |
+| Dashboard | Progress |
+|---|---|
+| ![Dashboard](screenshots/dashboard.png) | ![Progress](screenshots/progress.png) |
 
 ---
 
@@ -59,7 +55,59 @@ Make sure you have the following installed before you begin:
 
 ---
 
-## Local Installation
+## Quick Start with Docker
+
+The fastest way to run LearnFlow locally — no PHP or MySQL installation needed.
+
+### 1. Clone and configure
+
+```bash
+git clone https://github.com/mohakamran/LearnFlow.git
+cd LearnFlow
+
+# Create the Docker env file
+cp .env.docker.example .env
+```
+
+Open `.env` and fill in:
+- `DB_PASSWORD` — any strong password
+- `APP_KEY` — run `docker compose run --rm backend php artisan key:generate --show` and paste the output
+- `OPENAI_API_KEY` — your OpenAI secret key
+
+### 2. Build and start
+
+```bash
+docker compose up -d --build
+```
+
+This starts three containers:
+- `learnflow_db` — MySQL 8.0 on port 3306
+- `learnflow_backend` — Laravel API on port 8000 (runs migrations automatically)
+- `learnflow_frontend` — React app served by Nginx on port 80
+
+### 3. Open the app
+
+Navigate to **http://localhost** in your browser.
+
+### Useful Docker commands
+
+```bash
+# View logs
+docker compose logs -f backend
+
+# Run artisan commands
+docker compose exec backend php artisan tinker
+
+# Stop everything
+docker compose down
+
+# Stop and wipe the database volume
+docker compose down -v
+```
+
+---
+
+## Local Installation (Without Docker)
 
 ### 1. Clone the repository
 
