@@ -18,6 +18,8 @@ An AI-powered learning platform that generates personalized, resource-based road
 - **Delete Roadmap / Account** — Full data control with confirmation prompts and disclaimers
 - **Dark Mode** — Full light/dark theme support
 
+<img width="3839" height="1418" alt="progress" src="https://github.com/user-attachments/assets/98e46e07-a34b-44d5-8eea-93253fd4704b" />
+
 ---
 
 ## Tech Stack
