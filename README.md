@@ -274,14 +274,3 @@ All endpoints are under `/api/v1/` and require a Bearer token (except auth route
 4. Push to the branch: `git push origin feature/your-feature`
 5. Open a Pull Request
 
----
-
-## License
-
-This project is open source under the [MIT License](LICENSE).
-
----
-
-## Author
-
-Built by [Mohak Amran](https://github.com/mohakamran)
