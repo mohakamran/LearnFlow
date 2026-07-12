@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('roadmaps', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('goal'); // What user wants to become
+            $table->enum('experience_level', ['beginner', 'intermediate', 'advanced'])->default('beginner');
+            $table->integer('daily_hours')->default(1);
+            $table->string('preferred_language')->default('English');
+            $table->enum('learning_style', ['visual', 'reading', 'hands_on', 'mixed'])->default('mixed');
+            $table->date('deadline')->nullable();
+            $table->enum('status', ['active', 'completed', 'paused', 'archived'])->default('active');
+            $table->integer('total_topics')->default(0);
+            $table->integer('completed_topics')->default(0);
+            $table->integer('total_lessons')->default(0);
+            $table->integer('completed_lessons')->default(0);
+            $table->decimal('progress_percentage', 5, 2)->default(0);
+            $table->date('estimated_completion')->nullable();
+            $table->json('ai_metadata')->nullable(); // Store AI generation context
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('roadmaps');
+    }
+};

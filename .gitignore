@@ -1,0 +1,30 @@
+# Environment files — NEVER commit these
+backend/.env
+backend/.env.backup
+backend/.env.production
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+
+# Dependencies
+backend/vendor/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Laravel runtime
+backend/storage/logs/*.log
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/bootstrap/cache/*.php
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
