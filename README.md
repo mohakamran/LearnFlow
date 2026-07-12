@@ -2,7 +2,7 @@
 
 An AI-powered learning platform that generates personalized, resource-based roadmaps. Tell it what you want to learn — it builds a step-by-step curriculum with curated YouTube videos, articles, and official documentation for each lesson.
 
-![LearnFlow Dashboard](screenshots/dashboard.png)
+<img width="3835" height="1084" alt="dashboard" src="https://github.com/user-attachments/assets/30f96652-fc93-4433-8b31-5fedf1eea4d9" />
 
 ---
 
@@ -18,6 +18,8 @@ An AI-powered learning platform that generates personalized, resource-based road
 - **Delete Roadmap / Account** — Full data control with confirmation prompts and disclaimers
 - **Dark Mode** — Full light/dark theme support
 
+<img width="3839" height="1418" alt="progress" src="https://github.com/user-attachments/assets/98e46e07-a34b-44d5-8eea-93253fd4704b" />
+
 ---
 
 ## Tech Stack
@@ -31,27 +33,6 @@ An AI-powered learning platform that generates personalized, resource-based road
 | Auth | Laravel Sanctum (token-based) |
 | Database | MySQL 8+ |
 | AI | OpenAI GPT-4o via REST API |
-
----
-
-## Screenshots
-
-| Dashboard | Progress |
-|---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Progress](screenshots/progress.png) |
-
----
-
-## Prerequisites
-
-Make sure you have the following installed before you begin:
-
-- **PHP** 8.2 or higher — [php.net/downloads](https://www.php.net/downloads)
-- **Composer** 2.x — [getcomposer.org](https://getcomposer.org)
-- **Node.js** 20+ and **npm** — [nodejs.org](https://nodejs.org)
-- **MySQL** 8.0+ — [mysql.com](https://dev.mysql.com/downloads/)
-- **Git** — [git-scm.com](https://git-scm.com)
-- An **OpenAI API key** — [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 
 ---
 
@@ -104,6 +85,19 @@ docker compose down
 # Stop and wipe the database volume
 docker compose down -v
 ```
+
+---
+
+## Prerequisites
+
+Make sure you have the following installed before you begin:
+
+- **PHP** 8.2 or higher — [php.net/downloads](https://www.php.net/downloads)
+- **Composer** 2.x — [getcomposer.org](https://getcomposer.org)
+- **Node.js** 20+ and **npm** — [nodejs.org](https://nodejs.org)
+- **MySQL** 8.0+ — [mysql.com](https://dev.mysql.com/downloads/)
+- **Git** — [git-scm.com](https://git-scm.com)
+- An **OpenAI API key** — [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 
 ---
 
@@ -222,10 +216,10 @@ $apiKey = config('ai.providers.openai.api_key');  // reads from .env via config/
 The repository includes `.env.example` with all keys listed but with **empty values**. This is safe to commit — it documents what's needed without exposing real secrets:
 
 ```env
-OPENAI_API_KEY=        # ← empty, just a placeholder
+OPENAI_API_KEY=        # <- empty, just a placeholder
 ```
 
-When you clone the project, copy `.env.example` → `.env` and fill in your real values locally.
+When you clone the project, copy `.env.example` -> `.env` and fill in your real values locally.
 
 ### On production / deployment
 
@@ -235,7 +229,7 @@ When you clone the project, copy `.env.example` → `.env` and fill in your real
 
 ### Validate the key before saving
 
-The app validates your OpenAI key against the API before storing it — invalid keys are rejected. You can add your key from **Settings → AI Configuration** inside the app.
+The app validates your OpenAI key against the API before storing it — invalid keys are rejected. You can add your key from **Settings -> AI Configuration** inside the app.
 
 ---
 
@@ -271,6 +265,8 @@ LearnFlow/
 │       ├── contexts/AuthContext.tsx
 │       └── lib/api.ts                # Axios instance
 │
+├── docker-compose.yml        # Docker Compose (MySQL + backend + frontend)
+├── .env.docker.example       # Docker secrets template
 └── screenshots/              # App screenshots for README
 ```
 
